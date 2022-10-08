@@ -19,17 +19,14 @@ public class VectorRenderer : MonoBehaviour
         ts.localScale = new Vector3(0.05f, 10.0f, 0.05f);
 
         var scale = ts.localScale;
-        scale.y = vector.magnitude;
+        scale.y = vector.magnitude / 2.0f;
 
         var pos = vector;
         pos.x /= 2.0f;
         pos.y /= 2.0f;
         pos.z /= 2.0f;
         ts.localPosition = pos;
-
         ts.localScale = scale;
-
-        ts.localPosition = vector;
 
         ts.LookAt(vector + ts.position);
         ts.Rotate(rotation);
